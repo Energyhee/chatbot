@@ -1,0 +1,28 @@
+/* resources/styles/scss/header.scss */
+.header {
+  background-color: #333;
+  padding: 0.625rem 1.25rem;
+  color: #fff;
+}
+.header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-content .logo {
+  font-size: 1rem;
+}
+.header nav ul {
+  list-style: none;
+  display: flex;
+}
+.header nav ul li {
+  margin-right: 1.25rem;
+}
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.header nav ul li a:hover {
+  text-decoration: underline;
+}

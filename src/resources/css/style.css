@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* resources/styles/scss/style.scss */
+[data-motion=slide-up] {
+  transform: translateY(2.5rem);
+  -ms-transform: translateY(2.5rem);
+  -moz-transform: translateY(2.5rem);
+  -webkit-transform: translateY(2.5rem);
+  opacity: 0;
+}
+
+[data-motion=slide-down] {
+  transform: translateY(-2.5rem);
+  -ms-transform: translateY(-2.5rem);
+  -moz-transform: translateY(-2.5rem);
+  -webkit-transform: translateY(-2.5rem);
+  opacity: 0;
+}
+
+[data-motion=slide-left] {
+  transform: translateX(-2.5rem);
+  -ms-transform: translateX(-2.5rem);
+  -moz-transform: translateX(-2.5rem);
+  -webkit-transform: translateX(-2.5rem);
+  opacity: 0;
+}
+
+[data-motion=slide-right] {
+  transform: translateX(2.5rem);
+  -ms-transform: translateX(2.5rem);
+  -moz-transform: translateX(2.5rem);
+  -webkit-transform: translateX(2.5rem);
+  opacity: 0;
+}
+
+[data-motion=fade-in] {
+  opacity: 0;
+}
+
+[data-motion=scale-up] {
+  text-align: center;
+  transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  opacity: 0;
+}
+
+[data-motion=scale-down] {
+  text-align: center;
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  opacity: 0;
+}
+
+/* resources/styles/scss/header.scss */
+.header {
+  background-color: #333;
+  padding: 0.625rem 1.25rem;
+  color: #fff;
+}
+.header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header-content .logo {
+  font-size: 1rem;
+}
+.header nav ul {
+  list-style: none;
+  display: flex;
+}
+.header nav ul li {
+  margin-right: 1.25rem;
+}
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* resources/styles/scss/footer.scss */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.625rem;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* resources/styles/scss/chat.scss */
+html, body, #root {
+  height: 100%;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.chat-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 0 7.5rem;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.chat-wrap::before, .chat-wrap::after {
+  content: "";
+  position: absolute;
+  left: 1.25rem;
+  z-index: 2;
+  width: calc(100% - 2.5rem);
+  height: 1.875rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.chat-wrap:after {
+  content: "";
+  bottom: 7.5rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.talk-wrap {
+  padding: 1.875rem 1.25rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.talk-wrap .talk-box {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.talk-wrap .message {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.talk-wrap .message.user {
+  align-items: flex-end;
+  text-align: left;
+}
+.talk-wrap .message.user .message-in {
+  max-width: 60%;
+  border-radius: 1.125rem;
+  background-color: #e0f7fa;
+  color: #000;
+}
+.talk-wrap .message.assistant {
+  text-align: left;
+}
+.talk-wrap .message.assistant .message-in {
+  background-color: #f7f7f7;
+}
+.talk-wrap .message.assistant + .user {
+  margin-top: 2.5rem;
+}
+.talk-wrap .message ~ .message {
+  margin: 1.25rem 0 0;
+}
+.talk-wrap .message .message-in {
+  padding: 1.125rem 1.625rem;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #333;
+}
+.talk-wrap .message .message-in * {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.talk-wrap .message .message-in .frame-img {
+  display: block;
+  width: 100%;
+  max-width: 21.25rem;
+}
+.talk-wrap .message button {
+  position: absolute;
+  left: 0.375rem;
+  top: 0.375rem;
+  z-index: 1;
+}
+
+.ty-close {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -62.4375rem;
+  text-indent: -62.4375rem;
+  color: transparent;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+}
+.ty-close::before, .ty-close::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 0.5rem;
+  height: 0.125rem;
+  margin: -0.0625rem 0 0 -0.25rem;
+  background-color: #333;
+  transform: rotate(45deg);
+}
+.ty-close::after {
+  transform: rotate(-45deg);
+}
+
+/* 입력창 스타일 */
+.input-wrap {
+  position: fixed;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 6.25rem;
+  z-index: 3;
+  padding: 0.625rem;
+  border: 0.0625rem solid #ddd;
+  border-radius: 1.75rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.input-wrap .input-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.625rem;
+}
+.input-wrap .input-box input {
+  flex-grow: 1;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid #ccc;
+  margin-right: 0.625rem;
+}
+.input-wrap .input-box textarea {
+  flex: 1 0;
+  width: 100%;
+  min-height: 40px;
+  padding: 0.625rem;
+  resize: none;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #333;
+}
+.input-wrap .input-box button {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -62.4375rem;
+  text-indent: -62.4375rem;
+  color: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+  border: none;
+  border-radius: 100%;
+  background: url(../../resources/images/ico_send.png) no-repeat left 0.625rem center/1.125rem #007bff;
+  cursor: pointer;
+}
+.input-wrap .input-box button:hover {
+  background-color: #0056b3;
+}
+
+/* 반응형 스타일 */
+@media screen and (max-width: 767px) {
+  body, html {
+    font-size: 16px;
+  }
+}

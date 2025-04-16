@@ -1,0 +1,72 @@
+$path: '../../resources/images/';
+
+@function px($pixels) {
+    @return calc(($pixels) / 16) + rem;
+}
+
+$set-prefix: '', '-ms-', '-moz-', '-webkit-';
+@mixin baseSetPrefix($name, $value) {
+	@each $prefix in $set-prefix {
+		#{$prefix}#{$name}: $value;
+	}
+}
+
+@mixin placeSetPrefix($name, $value){
+	&::-webkit-input-placeholder {
+		#{$name}: $value;
+    }    
+    &:-moz-placeholder,
+    &::-moz-input-placeholder {
+        #{$name}: $value;
+    }
+    &:-ms-input-placeholder {
+        #{$name}: $value;
+    }
+}
+
+@mixin fontHide(){
+	font-size: 0; 
+	line-height: 0;
+	letter-spacing: px(-999);
+	text-indent: px(-999);
+	color: transparent;
+}
+
+@mixin font($f: null, $s: null, $w: null, $l: null, $c: null, $t : null, $a: null) {
+	font-family: $f;
+	font-size: $s;
+	font-weight: $w;
+	line-height: $l;
+	color: $c;
+	letter-spacing: $t;
+	text-align: $a;
+}
+
+@mixin pos($p: null,$l: null,$r: null,$t: null,$b: null,$z: null) {
+    position: $p;
+    left: $l;
+    right: $r;
+    top: $t;
+    bottom: $b;
+    z-index: $z;
+}
+
+@mixin par($w: null, $h: null, $t: null, $r: null, $b: null, $l: null, $c: null) {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: $t; 
+		right: $r;
+		bottom: $b;
+		left: $l;
+		@if $t == 50% {
+            margin-top: calc(-1 * (#{$h} / 2));
+		} @else if $b == 50% {
+			margin-bottom: calc(-1 * (#{$h} / 2))
+		}
+		width: $w; 
+		height: $h;
+		background: $c;
+	}
+}

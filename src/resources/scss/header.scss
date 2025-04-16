@@ -1,0 +1,29 @@
+@import './mixin';
+/* resources/styles/scss/header.scss */
+.header {
+    background-color: #333;
+    padding: px(10) px(20);
+    color: #fff;
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            font-size: px(16);
+        }
+    }
+    nav ul {
+        list-style: none;
+        display: flex;
+        li {
+            margin-right: px(20);
+            a {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import './mixin';
+/* resources/styles/scss/footer.scss */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: px(20);
+    a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 px(10);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
