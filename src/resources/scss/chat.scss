@@ -6,6 +6,7 @@ html, body, #root {
 
 .chat-container {
   display: flex;
+  flex: auto;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
@@ -15,27 +16,27 @@ html, body, #root {
   position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 720px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 0 px(120);
-  border: 1px solid #ddd;
-  background-color: #fff;
+  padding: 0 0 px(80);
+  background-color: #222;
   flex-grow: 1;
   overflow: hidden;
   &::before, &::after {
     content: '';
     @include pos($p: absolute, $l: px(20), $z: 2);
     width: calc(100% - px(40));
-    height: px(30);
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    height: px(20);
+    background: rgb(34,34,34);
+    background: linear-gradient(180deg, rgba(34,34,34,.9) 0%, rgba(34,34,34,0) 100%);
   }
   &:after {
     content: '';
-    bottom: px(120);
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    bottom: px(80);
+    background: rgb(34,34,34);
+    background: linear-gradient(0deg, rgba(34,34,34,.9) 0%, rgba(34,34,34,0) 100%);
   }
 }
 
@@ -57,15 +58,15 @@ html, body, #root {
       .message-in {
         max-width: 60%;
         border-radius: px(18);
-        background-color: #e0f7fa;
-        color: #000;
+        background-color: #333;
+        color: #fff;
       }
     }
     &.assistant {
       text-align: left;
       .message-in {
         // border: px(1) solid #ddd;
-        background-color: #f7f7f7;
+        // background-color: #f7f7f7;
       }
       + .user {
         margin-top: px(40);
@@ -77,44 +78,29 @@ html, body, #root {
     .message-in {
       padding: px(18) px(26);
       border-radius: px(10);
-      @include font($s: px(14), $w: 400, $l: px(20), $c: #333);
+      @include font($s: px(14), $w: 500, $l: px(20), $c: #eee);
       * {
         @include font($s: inherit, $l: inherit, $c: inherit);
       }
+      .frame-img {
+        width: 100%;
+        max-width: 400px;
+      }
     }
     button {
-      @include pos($p: absolute, $l: px(6), $t: px(6), $z: 1);
+      @include pos($p: absolute, $l: 0, $t: 0, $z: 1);
     }
-  }
-}
-
-.ty-close {
-  @include fontHide();
-  width: px(16);
-  height: px(16);
-  border-radius: 100%;
-  &::before, &::after {
-    content: '';
-    @include pos($p: absolute, $l: 50%, $t: 50%, $z: 1);
-    width: px(8);
-    height: px(2);
-    margin: px(-1) 0 0 px(-4);
-    background-color: #333;
-    transform: rotate(45deg);
-  }
-  &::after {
-    transform: rotate(-45deg);
   }
 }
 
 /* 입력창 스타일 */
 .input-wrap {
-  @include pos($p: fixed, $l: px(20), $r: px(20), $b: px(100), $z: 3);
+  @include pos($p: absolute, $l: px(20), $r: px(20), $b: px(26), $z: 3);
   padding: px(6);
-  border: px(1) solid #ddd;
+  border: px(1) solid #666;
   border-radius: px(28);
   box-shadow: 0 px(4) px(8) rgba(#000, 0.1);
-  background-color: #fff;
+  background-color: #222;
   .input-box {
     display: flex;
     justify-content: center;
@@ -131,10 +117,10 @@ html, body, #root {
       flex: 1;
       width: 100%;
       min-height: 40px;
-      padding: px(10);
+      padding: px(10) px(20);
       resize: none;
       overflow: hidden;
-      @include font($s: px(14), $w: 400, $l: px(20), $c: #333);
+      @include font($s: px(14), $w: 400, $l: px(20), $c: #fff);
     }
     button {
       @include fontHide();
@@ -143,10 +129,10 @@ html, body, #root {
       color: white;
       border: none;
       border-radius: 100%;
-      background: url(#{$path}+'ico_send.png') no-repeat left px(10) center/px(18) #007bff;
+      background: url(#{$path}+'ico_send.png') no-repeat left px(10) center/px(18) #333;
       cursor: pointer;
       &:hover {
-        background-color: #0056b3;
+        background-color: #333;
       }
     }
   }

@@ -6,6 +6,7 @@ html, body, #root {
 
 .chat-container {
   display: flex;
+  flex: auto;
   flex-direction: column;
   height: 100%;
   overflow: hidden;
@@ -15,12 +16,12 @@ html, body, #root {
   position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 720px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 0 7.5rem;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  padding: 0 0 5rem;
+  background-color: #222;
   flex-grow: 1;
   overflow: hidden;
 }
@@ -30,15 +31,15 @@ html, body, #root {
   left: 1.25rem;
   z-index: 2;
   width: calc(100% - 2.5rem);
-  height: 1.875rem;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  height: 1.25rem;
+  background: rgb(34, 34, 34);
+  background: linear-gradient(180deg, rgba(34, 34, 34, 0.9) 0%, rgba(34, 34, 34, 0) 100%);
 }
 .chat-wrap:after {
   content: "";
-  bottom: 7.5rem;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+  bottom: 5rem;
+  background: rgb(34, 34, 34);
+  background: linear-gradient(0deg, rgba(34, 34, 34, 0.9) 0%, rgba(34, 34, 34, 0) 100%);
 }
 
 .talk-wrap {
@@ -62,14 +63,11 @@ html, body, #root {
 .talk-wrap .message.user .message-in {
   max-width: 60%;
   border-radius: 1.125rem;
-  background-color: #e0f7fa;
-  color: #000;
+  background-color: #333;
+  color: #fff;
 }
 .talk-wrap .message.assistant {
   text-align: left;
-}
-.talk-wrap .message.assistant .message-in {
-  background-color: #f7f7f7;
 }
 .talk-wrap .message.assistant + .user {
   margin-top: 2.5rem;
@@ -81,60 +79,38 @@ html, body, #root {
   padding: 1.125rem 1.625rem;
   border-radius: 0.625rem;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25rem;
-  color: #333;
+  color: #eee;
 }
 .talk-wrap .message .message-in * {
   font-size: inherit;
   line-height: inherit;
   color: inherit;
 }
+.talk-wrap .message .message-in .frame-img {
+  width: 100%;
+  max-width: 400px;
+}
 .talk-wrap .message button {
   position: absolute;
-  left: 0.375rem;
-  top: 0.375rem;
+  left: 0;
+  top: 0;
   z-index: 1;
-}
-
-.ty-close {
-  font-size: 0;
-  line-height: 0;
-  letter-spacing: -62.4375rem;
-  text-indent: -62.4375rem;
-  color: transparent;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 100%;
-}
-.ty-close::before, .ty-close::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 0.5rem;
-  height: 0.125rem;
-  margin: -0.0625rem 0 0 -0.25rem;
-  background-color: #333;
-  transform: rotate(45deg);
-}
-.ty-close::after {
-  transform: rotate(-45deg);
 }
 
 /* 입력창 스타일 */
 .input-wrap {
-  position: fixed;
+  position: absolute;
   left: 1.25rem;
   right: 1.25rem;
-  bottom: 6.25rem;
+  bottom: 1.625rem;
   z-index: 3;
   padding: 0.375rem;
-  border: 0.0625rem solid #ddd;
+  border: 0.0625rem solid #666;
   border-radius: 1.75rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #222;
 }
 .input-wrap .input-box {
   display: flex;
@@ -153,13 +129,13 @@ html, body, #root {
   flex: 1;
   width: 100%;
   min-height: 40px;
-  padding: 0.625rem;
+  padding: 0.625rem 1.25rem;
   resize: none;
   overflow: hidden;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
-  color: #333;
+  color: #fff;
 }
 .input-wrap .input-box button {
   font-size: 0;
@@ -172,11 +148,11 @@ html, body, #root {
   color: white;
   border: none;
   border-radius: 100%;
-  background: url(../../resources/images/ico_send.png) no-repeat left 0.625rem center/1.125rem #007bff;
+  background: url(../../resources/images/ico_send.png) no-repeat left 0.625rem center/1.125rem #333;
   cursor: pointer;
 }
 .input-wrap .input-box button:hover {
-  background-color: #0056b3;
+  background-color: #333;
 }
 
 /* 반응형 스타일 */

@@ -1,0 +1,116 @@
+@import './mixin';
+.ty-close {
+    @include fontHide();
+    position: relative;
+    width: px(16);
+    height: px(16);
+    border-radius: 100%;
+    background-color: transparent;
+    &::before, &::after {
+        content: '';
+        @include pos($p: absolute, $l: 50%, $t: 50%, $z: 1);
+        width: px(8);
+        height: px(2);
+        margin: px(-1) 0 0 px(-4);
+        background-color: #eee;
+        transform: rotate(45deg);
+    }
+    &::after {
+        transform: rotate(-45deg);
+    }
+}
+
+.ty-menu {
+    @include fontHide();
+    position: relative;
+    width: px(16);
+    height: px(16);
+    border-radius: 100%;
+    background-color: transparent;
+    &::before, &::after {
+        content: '';
+        @include pos($p: absolute, $l: 50%, $t: px(2), $z: 1);
+        width: px(12);
+        height: px(2);
+        border-radius: px(1);
+        margin: 0 0 0 px(-6);
+        background-color: #eee;
+    }
+    &::after {
+        top: auto;
+        bottom: px(2);
+    }
+}
+
+.hide-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* container style scss */
+.main {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #222;
+}
+
+/* side style scss */
+.side-container {
+    flex: 0 px(80);
+    height: 100%;
+    padding: px(20) px(10);
+    background-color: #111;
+    transition-duration: .4s;
+}
+
+/* headers style scss */
+.header {
+    background-color: #222;
+    padding: px(20);
+    color: #fff;
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            font-size: px(16);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            li {
+                margin-right: px(20);
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* footer style scss */
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: px(20);
+    a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 px(10);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+

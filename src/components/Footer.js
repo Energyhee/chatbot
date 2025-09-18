@@ -8,21 +8,21 @@ const Footer = () => {
         <p>&copy; {new Date().getFullYear()} Han Changhee. All rights reserved.</p>
         <nav>
           <a 
-            href="https://github.com/yourusername" 
+            href="https://" 
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Han Changhee의 GitHub 프로필"
+            aria-label="한창희의 GitHub 프로필"
           >
             GitHub
           </a>
           {" | "}
           <a 
-            href="https://linkedin.com/in/yourprofile" 
+            href="https://" 
             target="_blank" 
             rel="noopener noreferrer"
-            aria-label="Han Changhee의 LinkedIn 프로필"
+            aria-label="한창희의 Notion"
           >
-            LinkedIn
+            Notion
           </a>
         </nav>
       </div>
