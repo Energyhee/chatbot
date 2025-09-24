@@ -82,10 +82,9 @@
   background-color: #111;
   transition-duration: 0.4s;
 }
-.side-container .btn.ty-menu.open {
+.side-container.open {
   flex: 0 25rem;
 }
-
 /* headers style scss */
 .header {
   background-color: #222;
