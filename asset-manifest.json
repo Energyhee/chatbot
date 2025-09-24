@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/chatbot/static/css/main.e110ae83.css",
-    "main.js": "/chatbot/static/js/main.c90ac552.js",
-    "static/js/453.9c8709a5.chunk.js": "/chatbot/static/js/453.9c8709a5.chunk.js",
+    "main.css": "/chatbot/static/css/main.5d7272db.css",
+    "main.js": "/chatbot/static/js/main.8e56ba16.js",
     "static/media/img_changhee.jpg": "/chatbot/static/media/img_changhee.a43a3ab39c500f7b4066.jpg",
     "static/media/SUIT-Thin.ttf": "/chatbot/static/media/SUIT-Thin.d05b10a9f9fd2d03f6f5.ttf",
     "static/media/SUIT-ExtraLight.ttf": "/chatbot/static/media/SUIT-ExtraLight.f32a70e959f48a492c9f.ttf",
@@ -33,12 +32,11 @@
     "static/media/SUIT-Thin.woff2": "/chatbot/static/media/SUIT-Thin.56434eb2a6cb87a88f88.woff2",
     "static/media/BebasNeue-Regular.ttf": "/chatbot/static/media/BebasNeue-Regular.9aa03f9d52866893add5.ttf",
     "index.html": "/chatbot/index.html",
-    "main.e110ae83.css.map": "/chatbot/static/css/main.e110ae83.css.map",
-    "main.c90ac552.js.map": "/chatbot/static/js/main.c90ac552.js.map",
-    "453.9c8709a5.chunk.js.map": "/chatbot/static/js/453.9c8709a5.chunk.js.map"
+    "main.5d7272db.css.map": "/chatbot/static/css/main.5d7272db.css.map",
+    "main.8e56ba16.js.map": "/chatbot/static/js/main.8e56ba16.js.map"
   },
   "entrypoints": [
-    "static/css/main.e110ae83.css",
-    "static/js/main.c90ac552.js"
+    "static/css/main.5d7272db.css",
+    "static/js/main.8e56ba16.js"
   ]
 }
